@@ -20,6 +20,11 @@ public class WaitingDetection : MonoBehaviour
         AttachThePoints();
     }
 
+    private void Update()
+    {
+        //SpawnAgain();
+    }
+
     private void AttachThePoints()
     {
         foreach (Transform point in _waitingPointsParent.transform)
@@ -47,5 +52,13 @@ public class WaitingDetection : MonoBehaviour
         CustomerManager.Instance.ActiveTheCostumers(car);
         waitingCarList.Remove(car);
         UpdateQueue();
+    }
+
+    private void SpawnAgain()
+    {
+        if (waitingCarList.Count == 0)
+        {
+            StartCoroutine(Spawner.Instance.Spawn(Spawner.Instance.spawnInterval));
+        }
     }
 }

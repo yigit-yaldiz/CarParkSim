@@ -70,6 +70,7 @@ public class Customer : MonoBehaviour
                 MovementController.isInTheCar = false;
                 CheckPassengerSituation(other);
                 other.GetComponent<CarController>().isCanRideable = false;
+                other.transform.parent.SetParent(null);
             }   
             else
             {

@@ -24,14 +24,6 @@ public class ParkManagment : MonoBehaviour
             return;
         }
 
-        CarsAndCustomers carsAndCustomers = other.transform.parent.GetComponent<CarsAndCustomers>();
-        CustomerManager.Instance.DecideTheCarClaim(carsAndCustomers);
-
-        if (!carsAndCustomers.WillTakeTheCar)
-        {
-            return;
-        }
-
         StartCoroutine(PlayerExitsFromCar(other, 1f));
     }
 

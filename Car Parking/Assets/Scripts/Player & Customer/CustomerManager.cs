@@ -86,6 +86,16 @@ public class CustomerManager : MonoBehaviour
 
         package.CanGetCar = true;
 
+        #region DecideTheCarClaim
+        CarsAndCustomers carsAndCustomers = package;
+        DecideTheCarClaim(carsAndCustomers);
+
+        if (!carsAndCustomers.WillTakeTheCar)
+        {
+            yield break;
+        }
+        #endregion
+
         FindAndAppearTheCustomers();
     }
 

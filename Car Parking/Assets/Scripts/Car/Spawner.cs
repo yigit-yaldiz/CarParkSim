@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Charboa.Utilities;
 
 public class Spawner : MonoBehaviour
 {   
@@ -39,7 +40,7 @@ public class Spawner : MonoBehaviour
         StartCoroutine(Spawn(spawnInterval));
     }
 
-    IEnumerator Spawn(float spawnInterval)
+    public IEnumerator Spawn(float spawnInterval)
     {
         for (int i = 0; i < WaitingDetection.Instance.queuePoints.Count; i++)
         {
